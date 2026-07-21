@@ -99,3 +99,7 @@ scores.txt      Persistent leaderboard data (player names and scores)
   sprites and sounds to be found.
 - The leaderboard is plain text: entries are appended on game over and re-read
   on startup, so editing `scores.txt` directly is a quick way to seed scores.
+
+## License
+
+This project is released under the [MIT License](LICENSE).
