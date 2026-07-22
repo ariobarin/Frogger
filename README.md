@@ -1,5 +1,7 @@
 # Frogger
 
+![Frogger gameplay](docs/screenshot.png)
+
 A from-scratch remake of the classic 1981 arcade game Frogger, written in plain
 Java (Swing + AWT) with no external libraries. Guide a frog across a busy road
 and a hazard-filled river to reach the safety of five home goals before the
