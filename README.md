@@ -100,6 +100,29 @@ scores.txt      Persistent leaderboard data (player names and scores)
 - The leaderboard is plain text: entries are appended on game over and re-read
   on startup, so editing `scores.txt` directly is a quick way to seed scores.
 
+## In the browser
+
+`wasm/` is the same game ported line by line to Rust and compiled to WebAssembly, with no Java runtime:
+the page (`wasm/web/index.html`) loads one ~120 KB file, `frogger.wasm`, which has the images built in.
+It runs at the game's own 60 frames a second and draws every frame exactly as Java2D does, down to how
+it scales the sprites. This is the version [ariobarin.com/frogger](https://ariobarin.com/frogger) embeds.
+
+```bash
+cd wasm
+cargo build --release --target wasm32-unknown-unknown
+```
+
+To check that the port still matches the Java version, `wasm/parity/` renders the same scripted games
+in both and compares the frames pixel for pixel; `cargo run --release --example bot` writes a script
+that plays through the levels.
+
+```bash
+javac -d wasm/parity/out src/*.java wasm/parity/FroggerFrames.java
+java -Djava.awt.headless=true -cp wasm/parity/out FroggerFrames <script> java-frames
+cargo run --release --manifest-path wasm/Cargo.toml --example frames -- <script> rust-frames scores.txt
+uv run --with pillow python wasm/parity/compare.py java-frames rust-frames
+```
+
 ## License
 
 This project is released under the [MIT License](LICENSE).
