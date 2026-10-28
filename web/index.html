@@ -43,6 +43,12 @@
     HTMLElement.prototype.focus = focusElement
   }
 
+  // the game sits inside a project page: the keys it uses must not scroll that page, and the mouse
+  // wheel (which the game doesn't use) should scroll it as usual
+  const SCROLL_KEYS = [" ", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown", "Home", "End"]
+  addEventListener("keydown", (event) => { if (SCROLL_KEYS.includes(event.key)) event.preventDefault() }, true)
+  addEventListener("wheel", (event) => event.stopImmediatePropagation(), { capture: true })
+
   // the title screen is up once CheerpJ has drawn the game's window
   new MutationObserver((changes, observer) => {
     if (!display.querySelector("canvas")) return
