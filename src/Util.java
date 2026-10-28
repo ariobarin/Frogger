@@ -64,10 +64,11 @@ public class Util {
         return min + (max - min) * RANDOM.nextDouble();
     }
 
-    // Load an image from a path
+    // Load an image from a path. The browser build sets frogger.root to the folder the paths are
+    // relative to, because CheerpJ doesn't resolve relative paths (see web/index.html)
     public static BufferedImage loadImage(String path) {
         try {
-            return ImageIO.read(new File(path));
+            return ImageIO.read(new File(System.getProperty("frogger.root", "") + path));
         } catch (IOException e) {
             throw new RuntimeException("Could not load image at path: " + path, e);
         }

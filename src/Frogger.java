@@ -13,6 +13,11 @@ public class Frogger extends JFrame {
         super("Frogger");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(game);
+        // in the browser (CheerpJ, see web/index.html) the game fills the page, so no window frame
+        if (System.getProperty("frogger.web") != null) {
+            setUndecorated(true);
+            setLocation(0, 0);
+        }
         pack();
         setVisible(true);
     }

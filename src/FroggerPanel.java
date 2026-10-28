@@ -51,7 +51,7 @@ class FroggerPanel extends JPanel implements KeyListener, ActionListener, MouseL
 
 	// Load the background images
 	static {
-		introBackground = Util.loadImage("src/assets/Background/Intro.png");
+		introBackground = Util.loadImage("src/assets/Background/intro.png");
 		gameBackground = Util.loadImage("src/assets/Background/BG.png");
 	}
 

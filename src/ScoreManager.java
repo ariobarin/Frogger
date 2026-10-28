@@ -9,7 +9,8 @@ import java.util.*;
 
 public class ScoreManager {
     private ArrayList<Score> highScores;
-    private final String scoreFile = "scores.txt";
+    // the browser build keeps scores in its own writable storage (see web/index.html)
+    private final String scoreFile = System.getProperty("frogger.scores", "scores.txt");
 
     public ScoreManager() {
         highScores = loadScores();

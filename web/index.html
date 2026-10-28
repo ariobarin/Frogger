@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frogger</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
+  #status { position: fixed; inset: 0; display: grid; place-items: center; color: #bbb; font: 15px/1.5 system-ui, sans-serif; }
+  /* the game's 800x800 window at its own size: CheerpJ sizes its canvas from the element's on-screen
+     box, so scaling happens outside (ariobarin.com scales the whole frame this page sits in) */
+  #display { position: absolute; left: 0; top: 0; width: 800px; height: 800px; }
+</style>
+<script src="https://cjrtnc.leaningtech.com/4.3/loader.js"></script>
+</head>
+<body>
+<div id="status">Loading Frogger…</div>
+<div id="display"></div>
+<script>
+  // Frogger runs on CheerpJ (a Java runtime in WebAssembly). The jar and the game's images sit next to
+  // this page; CheerpJ's /app/ is the site root, so frogger.root points the game's asset paths here.
+  //
+  // ariobarin.com opens this page with #preload while the visitor reads, then calls ariobarinPlay()
+  // when Play is pressed. Until then the game sits on its title screen and must not take the
+  // keyboard from the page around it.
+  const SIZE = 800
+  const display = document.getElementById("display")
+  const here = location.pathname.replace(/[^/]*$/, "")
+
+  window.ariobarinPlaying = location.hash != "#preload"
+  window.ariobarinPaused = false
+  const focusWindow = window.focus
+  const focusElement = HTMLElement.prototype.focus
+  if (!window.ariobarinPlaying) {
+    window.focus = () => {}
+    HTMLElement.prototype.focus = function () {}
+  }
+  window.ariobarinPlay = () => {
+    window.ariobarinPlaying = true
+    window.ariobarinPaused = false
+    window.focus = focusWindow
+    HTMLElement.prototype.focus = focusElement
+  }
+
+  // the title screen is up once CheerpJ has drawn the game's window
+  new MutationObserver((changes, observer) => {
+    if (!display.querySelector("canvas")) return
+    observer.disconnect()
+    setTimeout(() => {
+      document.getElementById("status").remove()
+      if (!window.ariobarinPlaying) window.ariobarinPaused = true
+    }, 500)
+  }).observe(display, { childList: true, subtree: true })
+
+  ;(async () => {
+    await cheerpjInit({
+      version: 17,
+      status: "none",
+      javaProperties: ["frogger.root=/app" + here, "frogger.web=1", "frogger.scores=/files/frogger-scores.txt"],
+    })
+    cheerpjCreateDisplay(SIZE, SIZE, display)
+    await cheerpjRunJar("/app" + here + "frogger.jar")
+  })()
+</script>
+</body>
+</html>
