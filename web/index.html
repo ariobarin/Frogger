@@ -18,15 +18,16 @@
 <div id="status">Loading Frogger…</div>
 <div id="display"></div>
 <script>
-  // Frogger runs on CheerpJ (a Java runtime in WebAssembly). The jar and the game's images sit next to
-  // this page; CheerpJ's /app/ is the site root, so frogger.root points the game's asset paths here.
+  // Frogger runs on CheerpJ (a Java runtime in WebAssembly), from frogger.jar next to this page, with
+  // the game's images packed inside it. The page fetches the jar itself and hands it to CheerpJ in
+  // memory (/str/): CheerpJ's own file reads use HTTP range requests, which a CDN may only honour
+  // once the file is in its cache.
   //
   // ariobarin.com opens this page with #preload while the visitor reads, then calls ariobarinPlay()
   // when Play is pressed. Until then the game sits on its title screen and must not take the
   // keyboard from the page around it.
   const SIZE = 800
   const display = document.getElementById("display")
-  const here = location.pathname.replace(/[^/]*$/, "")
 
   window.ariobarinPlaying = location.hash != "#preload"
   window.ariobarinPaused = false
@@ -60,13 +61,15 @@
   }).observe(display, { childList: true, subtree: true })
 
   ;(async () => {
+    const jar = fetch("frogger.jar").then((response) => response.arrayBuffer())
     await cheerpjInit({
       version: 17,
       status: "none",
-      javaProperties: ["frogger.root=/app" + here, "frogger.web=1", "frogger.scores=/files/frogger-scores.txt"],
+      javaProperties: ["frogger.web=1", "frogger.scores=/files/frogger-scores.txt"],
     })
+    cheerpOSAddStringFile("/str/frogger.jar", new Uint8Array(await jar))
     cheerpjCreateDisplay(SIZE, SIZE, display)
-    await cheerpjRunJar("/app" + here + "frogger.jar")
+    await cheerpjRunJar("/str/frogger.jar")
   })()
 </script>
 </body>
