@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- Frogger compiled from its Java (../src, unchanged) to WebAssembly with TeaVM. `mvn package` here
+       builds the page into frogger/target/site.
+       awt: AWT, Swing and ImageIO, the parts the game uses, drawing on a web page's canvas
+       frogger: the game with them -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ariobarin.frogger</groupId>
+  <artifactId>teavm</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>awt</module>
+    <module>frogger</module>
+  </modules>
+
+  <properties>
+    <teavm.version>0.16.0</teavm.version>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.teavm</groupId>
+      <artifactId>teavm-classlib</artifactId>
+      <version>${teavm.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.teavm</groupId>
+      <artifactId>teavm-jso-apis</artifactId>
+      <version>${teavm.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

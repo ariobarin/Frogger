@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- AWT, Swing and ImageIO for TeaVM: the parts Frogger uses, drawing on a web page's canvas. They are
+       their own jar because TeaVM takes the first class it finds of a name, and lists a project's
+       dependencies before its own classes: this way the Color and PrintWriter here come before the
+       ones in TeaVM's class library. -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.ariobarin.frogger</groupId>
+    <artifactId>teavm</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <artifactId>awt</artifactId>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.teavm</groupId>
+      <artifactId>teavm-extension-spi</artifactId>
+      <version>${teavm.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>

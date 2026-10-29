@@ -6,3 +6,6 @@ Thumbs.db
 nul
 .vscode/
 .idea/
+
+# TeaVM build output
+teavm/*/target/

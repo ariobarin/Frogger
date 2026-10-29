@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frogger</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #000; }
+  body { display: grid; place-items: center; }
+  canvas { display: block; }
+  #status { position: fixed; inset: 0; display: grid; place-items: center; color: #bbb; font: 15px/1.5 system-ui, sans-serif; }
+</style>
+<script src="classes.wasm-runtime.js"></script>
+</head>
+<body>
+<div id="status">Loading Frogger…</div>
+<canvas id="screen" width="800" height="800"></canvas>
+<script type="module">
+  // Frogger's Java (../../src), compiled to WebAssembly by TeaVM with AWT and Swing replaced by small
+  // canvas versions (../src/main/java). This page gives the game its files, runs it on every animation
+  // frame and passes it the keyboard and mouse; frogger.web.Page is the other side.
+  //
+  // ariobarin.com opens this page with #preload while the visitor reads, then calls ariobarinPlay() when
+  // Play is pressed. Until then the game holds its title screen and leaves the keyboard alone.
+  const SIZE = 800
+  const SCORES = "frogger-scores"
+  const canvas = document.getElementById("screen")
+  const context = canvas.getContext("2d", { alpha: false })
+
+  window.ariobarinPlaying = location.hash != "#preload"
+  window.ariobarinPaused = false
+  window.ariobarinPlay = () => {
+    window.ariobarinPlaying = true
+    window.ariobarinPaused = false
+    window.focus()
+  }
+
+  // show the 800x800 game as large as the window allows; scaled up it keeps its hard pixel edges
+  function fit() {
+    const scale = Math.min(innerWidth / SIZE, innerHeight / SIZE)
+    canvas.style.width = canvas.style.height = `${SIZE * scale}px`
+    canvas.style.imageRendering = scale * devicePixelRatio >= 1 ? "pixelated" : "auto"
+  }
+  addEventListener("resize", fit)
+  fit()
+
+  function storage(action) {
+    try { return action(localStorage) } catch { return null } // storage can be off (private windows, settings)
+  }
+
+  // the game's PNGs come as a zip of its src/assets folder, which the game finds in its file system
+  const [teavm, assets] = await Promise.all([
+    TeaVM.wasmGC.load("frogger.wasm", { stackDeobfuscator: { enabled: false } }),
+    fetch("assets.zip").then((response) => response.arrayBuffer()),
+  ])
+  window.froggerPage = {
+    assets: new Int8Array(assets),
+    loadScores: () => storage((s) => s.getItem(SCORES)),
+    saveScores: (text) => storage((s) => s.setItem(SCORES, text)),
+  }
+  const game = teavm.exports
+  game.main([])
+
+  let shown = false
+  requestAnimationFrame(function tick(now) {
+    // preloading: show the title screen, then hold until Play
+    if (shown && !window.ariobarinPlaying) {
+      window.ariobarinPaused = true
+    } else if (game.frame(now)) {
+      const pixels = game.pixels() // a view of the game's memory
+      context.putImageData(new ImageData(new Uint8ClampedArray(pixels.buffer, pixels.byteOffset, pixels.length), SIZE, SIZE), 0, 0)
+      if (!shown) {
+        shown = true
+        document.getElementById("status").remove()
+      }
+    }
+    requestAnimationFrame(tick)
+  })
+
+  // the game's keys are java.awt.event.KeyEvent codes, which match the browser's keyCode
+  const KEYS = { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 }
+  // the game sits inside a project page: the keys it uses must not scroll that page
+  const SCROLL_KEYS = [" ", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown", "Home", "End"]
+  for (const [type, down] of [["keydown", true], ["keyup", false]]) {
+    addEventListener(type, (event) => {
+      if (SCROLL_KEYS.includes(event.key)) event.preventDefault()
+      game.key(KEYS[event.key] ?? event.keyCode, down)
+    })
+  }
+
+  function point(event) {
+    const box = canvas.getBoundingClientRect()
+    return [Math.floor((event.clientX - box.left) * SIZE / box.width), Math.floor((event.clientY - box.top) * SIZE / box.height)]
+  }
+  // a press on the game is followed to its release, even off the canvas, as Swing does
+  let pressing = false
+  addEventListener("mousemove", (event) => {
+    if (pressing || event.target == canvas) game.mouseMove(...point(event), event.buttons != 0)
+  })
+  canvas.addEventListener("mousedown", (event) => {
+    pressing = true
+    game.mouseDown(...point(event))
+  })
+  addEventListener("mouseup", (event) => {
+    if (pressing) game.mouseUp(...point(event))
+    pressing = false
+  })
+</script>
+</body>
+</html>

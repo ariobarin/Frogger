@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- The game (../../src, unchanged) and its page, built into target/site -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.ariobarin.frogger</groupId>
+    <artifactId>teavm</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <artifactId>frogger</artifactId>
+  <packaging>jar</packaging>
+
+  <properties>
+    <site>${project.build.directory}/site</site>
+  </properties>
+
+  <dependencies>
+    <!-- before TeaVM's class library (see ../awt/pom.xml) -->
+    <dependency>
+      <groupId>com.ariobarin.frogger</groupId>
+      <artifactId>awt</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.teavm</groupId>
+      <artifactId>teavm-classlib</artifactId>
+      <version>${teavm.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <compileSourceRoots>
+            <root>${project.basedir}/src/main/java</root>
+            <root>${project.basedir}/../../src</root>
+          </compileSourceRoots>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.teavm</groupId>
+        <artifactId>teavm-maven-plugin</artifactId>
+        <version>${teavm.version}</version>
+        <executions>
+          <execution>
+            <id>frogger</id>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <targetDirectory>${site}</targetDirectory>
+              <targetFileName>frogger.wasm</targetFileName>
+              <targetType>WEBASSEMBLY_GC</targetType>
+              <mainClass>FroggerWeb</mainClass>
+              <optimizationLevel>FULL</optimizationLevel>
+              <minifying>true</minifying>
+              <debugInformationGenerated>false</debugInformationGenerated>
+              <sourceMapsGenerated>false</sourceMapsGenerated>
+            </configuration>
+          </execution>
+          <execution>
+            <id>runtime</id>
+            <goals>
+              <goal>copy-webassembly-gc-runtime</goal>
+            </goals>
+            <configuration>
+              <targetDirectory>${site}</targetDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- The page, and the game's folder of PNGs as a zip for the page to put in its file system -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <zip destfile="${site}/assets.zip" basedir="${project.basedir}/../.." includes="src/assets/**/*.png"
+                    compress="false" modificationtime="2000-01-01T00:00:00Z"/>
+                <copy todir="${site}">
+                  <fileset dir="${project.basedir}/web"/>
+                </copy>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
