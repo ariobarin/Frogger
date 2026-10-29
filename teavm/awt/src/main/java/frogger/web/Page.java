@@ -153,8 +153,9 @@ public final class Page {
         screen.getRGB(0, 0, width, screen.getHeight(), argb, 0, width);
         for (int i = 0; i < argb.length; i++) {
             int p = argb[i];
-            rgbaPixels.put(i, p & 0xff00ff00 | p >> 16 & 0xff | (p & 0xff) << 16);
+            argb[i] = p & 0xff00ff00 | p >> 16 & 0xff | (p & 0xff) << 16;
         }
+        rgbaPixels.put(0, argb);
         return Uint8ClampedArray.fromJavaBuffer(rgba);
     }
 
