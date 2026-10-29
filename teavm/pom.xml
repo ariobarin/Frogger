@@ -16,6 +16,16 @@
     <module>frogger</module>
   </modules>
 
+  <profiles>
+    <!-- the frame harness that checks the build against the Java version (see README.md) -->
+    <profile>
+      <id>parity</id>
+      <modules>
+        <module>parity</module>
+      </modules>
+    </profile>
+  </profiles>
+
   <properties>
     <teavm.version>0.16.0</teavm.version>
     <maven.compiler.release>21</maven.compiler.release>

@@ -1,0 +1,2085 @@
+seed 7
+shot a_intro
+move 400 277
+shot a_hover_play
+move 400 330
+shot a_hover_board
+move 10 10
+press 400 277
+key 38 down
+step 1
+key 38 up
+shot b_0000
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0007
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0014
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0021
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0028
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0035
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+shot b_0042
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0049
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_0056
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0063
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0070
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0077
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0084
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_0091
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0098
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0105
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0112
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+shot b_0119
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0126
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_0133
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0140
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_0147
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0154
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0161
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0168
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0175
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_0182
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0189
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0196
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0203
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+shot b_0210
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0217
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+shot b_0224
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0231
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+step 1
+step 1
+shot b_0238
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0245
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0252
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0259
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0266
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_0273
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0280
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0287
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0294
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0301
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0308
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_0315
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0322
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+shot b_0329
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0336
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0343
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0350
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0357
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+shot b_0364
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0371
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0378
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0385
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0392
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0399
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+shot b_0406
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0413
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+step 1
+shot b_0420
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0427
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0434
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0441
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0448
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+shot b_0455
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0462
+step 1
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+shot b_0469
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0476
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0483
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0490
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_0497
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0504
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_0511
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0518
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0525
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0532
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0539
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_0546
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0553
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0560
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0567
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+shot b_0574
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0581
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_0588
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0595
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_0602
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0609
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0616
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0623
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0630
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_0637
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0644
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0651
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0658
+step 1
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+shot b_0665
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0672
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_0679
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0686
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+shot b_0693
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0700
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0707
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0714
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0721
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_0728
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0735
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0742
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0749
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0756
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0763
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_0770
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0777
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_0784
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0791
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0798
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0805
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0812
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+shot b_0819
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0826
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0833
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0840
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0847
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0854
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+step 1
+shot b_0861
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0868
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_0875
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0882
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0889
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0896
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0903
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+shot b_0910
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0917
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_0924
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0931
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_0938
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0945
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+shot b_0952
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0959
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+shot b_0966
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0973
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0980
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0987
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_0994
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_1001
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1008
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_1015
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1022
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+shot b_1029
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1036
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_1043
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1050
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_1057
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1064
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1071
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1078
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1085
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_1092
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1099
+step 1
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+shot b_1106
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1113
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_1120
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1127
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_1134
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1141
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_1148
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1155
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1162
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1169
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1176
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_1183
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1190
+step 1
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+shot b_1197
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1204
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+shot b_1211
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1218
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+shot b_1225
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1232
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_1239
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1246
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1253
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1260
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1267
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_1274
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1281
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+shot b_1288
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1295
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+shot b_1302
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1309
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+shot b_1316
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1323
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_1330
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1337
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1344
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1351
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1358
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+shot b_1365
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1372
+step 1
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+shot b_1379
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1386
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_1393
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1400
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+shot b_1407
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1414
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_1421
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1428
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1435
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1442
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1449
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+shot b_1456
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1463
+step 1
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+shot b_1470
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1477
+step 1
+step 1
+step 1
+step 1
+key 39 down
+step 1
+key 39 up
+step 1
+step 1
+shot b_1484
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1491
+step 1
+step 1
+step 1
+key 40 down
+step 1
+key 40 up
+step 1
+step 1
+step 1
+shot b_1498
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1505
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+shot b_1512
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1519
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1526
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1533
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1540
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+shot b_1547
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1554
+step 1
+step 1
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+shot b_1561
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1568
+step 1
+step 1
+step 1
+step 1
+key 38 down
+step 1
+key 38 up
+step 1
+step 1
+shot b_1575
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1582
+step 1
+step 1
+step 1
+key 37 down
+step 1
+key 37 up
+step 1
+step 1
+step 1
+shot b_1589
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+step 1
+shot b_1596
+step 1
+step 1
+key 39 down
+step 1
+key 39 up

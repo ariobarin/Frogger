@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Frogger frames</title>
+<script src="classes.wasm-runtime.js"></script>
+</head>
+<body>
+<script type="module">
+  // Runs FroggerFramesWeb on the script named by ?script= (a path this page can fetch), with the scores
+  // file the Java version reads (scores.txt). It prints its results to the console, then "done".
+  const name = new URLSearchParams(location.search).get("script")
+  const [teavm, assets, script, scores] = await Promise.all([
+    TeaVM.wasmGC.load("frames.wasm", { stackDeobfuscator: { enabled: false } }),
+    fetch("assets.zip").then((response) => response.arrayBuffer()),
+    fetch(name).then((response) => response.text()),
+    fetch("scores.txt").then((response) => (response.ok ? response.text() : null)),
+  ])
+  window.froggerPage = { assets: new Int8Array(assets), loadScores: () => scores, saveScores: () => {} }
+  window.froggerScript = script
+  // the game over dialog: the Java version's runs end there
+  window.prompt = () => {
+    window.froggerDialog = true
+    return null
+  }
+  try {
+    teavm.exports.main([])
+  } finally {
+    console.log("done")
+  }
+</script>
+</body>
+</html>
