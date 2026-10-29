@@ -123,36 +123,34 @@ impl Graphics {
     }
 }
 
-// One axis of a drawImage(img, x, y, width, height): the screen range it touches and, for each pixel of
-// it, the source pixel (None where that falls outside the image). Every sprite has transparent pixels,
-// so Java2D draws it through TransformHelper (TransformHelper.c, DrawImage.renderImageXform): the
-// inverse transform of the first visible pixel's centre in 32.32 fixed point, then a fixed point step
-// per pixel. Its rounding differs from floor((i + 0.5) * size / width) wherever that lands exactly on a
-// pixel edge, and it starts counting at the first on-screen pixel. An image drawn at its own size is
-// a plain copy.
-fn sample_map(at: i32, size: i32, src: i32, screen: i32) -> Option<(i32, i32, Vec<Option<i32>>)> {
+// One axis of a drawImage(img, x, y, width, height): the screen pixels it covers and, for each, the
+// source pixel it shows (None where that is outside the image). Measured with parity/ScaleProbe.java:
+// Java follows a source cursor in fixed point with 32 fraction bits. It starts under the centre of the
+// first pixel on the screen and moves by the source size over the drawn size per pixel, both truncated.
+// So a sprite cut off at the screen's left edge can pick different source pixels from the same sprite
+// on screen, and a pixel centre that lands exactly on a source edge can go either way. An image drawn
+// at its own size is copied.
+pub(crate) fn sample_map(at: i32, size: i32, src: i32, screen: i32) -> Option<(i32, i32, Vec<Option<i32>>)> {
+    let first = at.max(0);
     if size == src {
-        let (start, end) = (at.max(0), (at + size).min(screen));
-        return (start < end).then(|| (start, end, (start..end).map(|d| Some(d - at)).collect()));
+        let last = (at + size).min(screen);
+        return (first < last).then(|| (first, last, (first..last).map(|x| Some(x - at)).collect()));
     }
-    const ONE: f64 = 4294967296.0; // 1 in 32.32 fixed point
-    let scale = size as f64 / src as f64; // AffineTransform.scale
-    let inverse = 1.0 / scale; // AffineTransform.createInverse
-    let offset = -(at as f64) / scale;
-    let start = at.max(0);
-    let end = ((src as f64 * scale + at as f64).ceil() as i32).min(screen);
-    if start >= end {
+    let ratio = src as f64 / size as f64; // source pixels per screen pixel
+    let last = ((at as f64 + size as f64).ceil() as i32).min(screen);
+    if first >= last {
         return None;
     }
-    let base = ((inverse * (start as f64 + 0.5) + offset) * ONE) as i64;
-    let step = (inverse * ONE) as i64;
-    let map = (0..end - start)
-        .map(|i| {
-            let s = ((base + i as i64 * step) >> 32) as i32;
-            (0..src).contains(&s).then_some(s)
-        })
-        .collect();
-    Some((start, end, map))
+    let unit = (1u64 << 32) as f64;
+    let mut cursor = ((first as f64 + 0.5 - at as f64) * ratio * unit) as i64;
+    let step = (ratio * unit) as i64;
+    let mut columns = Vec::with_capacity((last - first) as usize);
+    for _ in first..last {
+        let pixel = (cursor >> 32) as i32;
+        columns.push((0..src).contains(&pixel).then_some(pixel));
+        cursor += step;
+    }
+    Some((first, last, columns))
 }
 
 // SrcOver onto an opaque pixel: src * a + dst * (1 - a), with Java2D's rounding

@@ -229,3 +229,9 @@ pub use panel::FroggerPanel as Panel;
 pub fn asset_pngs() -> &'static [&'static [u8]] {
     assets::PNGS
 }
+
+// For examples/probe_check.rs, which checks the sprite sampling against Java
+#[doc(hidden)]
+pub fn sample_columns(at: i32, size: i32, src: i32, screen: i32) -> Option<(i32, i32, Vec<Option<i32>>)> {
+    gfx::sample_map(at, size, src, screen)
+}

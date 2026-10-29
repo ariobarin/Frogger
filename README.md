@@ -114,7 +114,9 @@ cargo build --release --target wasm32-unknown-unknown
 
 To check that the port still matches the Java version, `wasm/parity/` renders the same scripted games
 in both and compares the frames pixel for pixel; `cargo run --release --example bot` writes a script
-that plays through the levels.
+that plays through the levels. `wasm/parity/ScaleProbe.java` measures how Java picks source pixels
+when it scales a sprite, and `cargo run --release --example probe_check -- <its output>` checks the
+port against it.
 
 ```bash
 javac -d wasm/parity/out src/*.java wasm/parity/FroggerFrames.java
