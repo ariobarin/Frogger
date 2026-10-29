@@ -26,8 +26,11 @@ use gfx::{Graphics, Image};
 use panel::FroggerPanel;
 use util::Art;
 
-// the Swing timer ticks at FPS: one game step (and repaint) per tick
-const STEP_MS: f64 = 1000.0 / panel::FPS as f64;
+// One game step (and repaint) per Swing timer tick. The game asks for a tick every 1000 / FPS = 16 ms, but
+// on Windows, where it was made and played, the timer wakes only on the system clock's 15.6 ms beats
+// unless another program has asked for finer ones: measured, the desktop game runs 33-35 steps a second.
+const STEPS_PER_SECOND: f64 = 34.0;
+const STEP_MS: f64 = 1000.0 / STEPS_PER_SECOND;
 
 #[cfg(target_arch = "wasm32")]
 #[link(wasm_import_module = "env")]
@@ -145,7 +148,7 @@ pub extern "C" fn frame(now: f64) -> u32 {
         } else {
             game.clock += elapsed;
         }
-        // round to the nearest step so a 60 Hz screen gets exactly one step per frame despite jitter
+        // round to the nearest step, so frame timing jitter doesn't add or drop one
         let mut steps = ((game.clock + STEP_MS / 4.0) / STEP_MS).floor().max(0.0) as u32;
         game.clock -= steps as f64 * STEP_MS;
         if steps > 4 {
