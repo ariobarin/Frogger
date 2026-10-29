@@ -125,12 +125,13 @@ public final class Page {
         return true;
     }
 
-    // Fires a timer's ticks owed after `elapsed` more ms. The game asks for 1000 / FPS ms, which integer
-    // division makes 16 for its 60; that delay ticks 60 times a second, once per frame on a 60 Hz screen.
-    // The count is rounded to the nearest tick so frame timing jitter doesn't double or skip one.
+    // Fires a timer's ticks owed after `elapsed` more ms, rounded to the nearest tick so frame timing jitter
+    // doesn't add or drop one. Frogger asks for a tick every 1000 / 60 = 16 ms, but on Windows, where it was
+    // made and played, Swing's timer wakes only on the system clock's 15.6 ms beats unless another program
+    // has asked for finer ones: measured, that timer fires 33-35 times a second, and so it does here.
     private static void tick(Ticking ticking, double elapsed) {
         Timer timer = ticking.timer;
-        double period = timer.getDelay() == 1000 / 60 ? 1000.0 / 60 : Math.max(timer.getDelay(), 1);
+        double period = timer.getDelay() == 16 ? 1000.0 / 34 : Math.max(timer.getDelay(), 1);
         // after a pause (a hidden tab, the name dialog) carry on rather than catch up
         ticking.clock = elapsed > 250 ? 0 : ticking.clock + elapsed;
         int ticks = (int) Math.max(0, Math.floor((ticking.clock + period / 4) / period));

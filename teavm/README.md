@@ -8,8 +8,10 @@ canvas.
   - `Graphics` draws on an image with the arithmetic Java2D's software drawing gives. How it scales
     sprites is written from Java's measured behaviour (`parity/jvm/ScaleProbe.java`), not from OpenJDK's
     source.
-  - `javax.swing.Timer` ticks on the page's animation frames. The game asks for 1000 / 60 ms, which
-    integer division makes 16, and gets 60 ticks a second, one per frame on a 60 Hz screen.
+  - `javax.swing.Timer` ticks on the page's animation frames, at the desktop game's pace. The game asks
+    for a tick every 1000 / 60 = 16 ms, but on Windows Swing's timer wakes only on the system clock's
+    15.6 ms beats unless another program has asked for finer ones, so it runs 33-35 steps a second.
+    The page runs it at 34, whatever the screen's refresh rate.
   - Keyboard and mouse events come from the page and go to the game's listeners as Swing sends them.
   - `JOptionPane.showInputDialog` is the browser's prompt, which waits for the answer as Java's dialog does.
   - `ImageIO.read` reads the PNGs from TeaVM's in-memory file system, finding names whatever their case,
