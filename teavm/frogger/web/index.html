@@ -11,6 +11,9 @@
   canvas { display: block; }
   #status { position: fixed; inset: 0; display: grid; place-items: center; color: #bbb; font: 15px/1.5 system-ui, sans-serif; }
 </style>
+<!-- the game and its images download while TeaVM's loader does -->
+<link rel="preload" href="frogger.wasm" as="fetch" crossorigin>
+<link rel="preload" href="assets.zip" as="fetch" crossorigin>
 <script src="classes.wasm-runtime.js"></script>
 </head>
 <body>
